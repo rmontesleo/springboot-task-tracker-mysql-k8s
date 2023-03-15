@@ -1,0 +1,33 @@
+server:
+  port: ${APPLICATION_PORT}
+  servlet:
+    context-path: "/api/tasktracker"
+
+spring:
+  application:
+    name: tasktracker
+  datasource:
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    url: ${SPRING_DATASOURCE_URL}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        '[format_sql]': ${IS_FORMAT_SQL}
+    show-sql: ${IS_SHOW_SQL}
+  output:
+    ansi:
+      enabled: ${HOW_ANSI_OUTPUT_IS_ENABLED}
+
+logging:
+  level:
+    root: INFO
+    '[org.springframework.web]': ERROR
+    '[org.hibernate]': ERROR
+    '[com.demo.todoapi.*]': DEBUG
+    
+
+allowOrigins: "http://localhost:4200,http://localhost:3000"
