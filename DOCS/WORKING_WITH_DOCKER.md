@@ -57,8 +57,16 @@ services:
 
 #### build your production image
 ```bash
-docker build --target production -t springboot-task-tracker-mysql-docker:v1 .
+docker build --target production -t springboot-task-tracker-mysql-k8s:v1 .
 ```
+
+### set images
+```bash
+docker_registry_name="<SET_YOUR_DOCKER_USER_NAME>"
+docker tag springboot-task-tracker-mysql-k8s:v1 $docker_registry_name/springboot-task-tracker-mysql-k8s:v1
+docker push $docker_registry_name/springboot-task-tracker-mysql-k8s:v1
+```
+
 
 
 ### work with compose

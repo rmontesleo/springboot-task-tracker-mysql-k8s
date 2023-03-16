@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:  
+  name: task-api-cm
+  namespace: task-api-ns
+data:
+  user_data: "Some User Data"
+  user_name: "Chanchito Feliz"
+  TODO_API_VERSION: "v1"
+  APPLICATION_PORT: "8080"
+  IS_FORMAT_SQL: "true"
+  IS_SHOW_SQL: "true"
+  HOW_ANSI_OUTPUT_IS_ENABLED: "ALWAYS"
+  SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/tasksdb

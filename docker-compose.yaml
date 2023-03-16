@@ -8,13 +8,13 @@ services:
       - "3306:3306"
 
   api:
-    image: springboot-task-tracker-mysql-docker
+    image: springboot-task-tracker-mysql-k8s
     ports:
       - "8080-8085:8080"
 
 volumes: 
-  springboot-task-tracker-mysql-api-volume:
+  springboot-task-tracker-mysql-k8s-volume:
 
 networks:
   default:
-    name: springboot-task-tracker-mysql-api-network
+    name: springboot-task-tracker-mysql-k8s-network

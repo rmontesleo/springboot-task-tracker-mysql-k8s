@@ -13,14 +13,22 @@ FROM base as development
 CMD [ "./mvnw", "spring-boot:run" ]
 
 FROM base as build
-RUN ./mvnw clean compile jar:jar
+RUN ./mvnw clean  -DskipTests=true package
 
 
 FROM eclipse-temurin:17-jre-alpine as production
 RUN addgroup -S spring && adduser -S spring -G spring
 USER spring:spring
 EXPOSE 8080
-COPY --from=build /app/target/springboot-task-tracker-mysql-docker.jar /home/spring/springboot-task-tracker-mysql-docker.jar
-ENTRYPOINT [ "java", "-jar", "/home/spring/springboot-task-tracker-mysql-docker.jar" ]
+COPY --from=build /app/target/springboot-task-tracker-mysql-k8s.jar /home/spring/springboot-task-tracker-mysql-k8s.jar
+ENTRYPOINT [ "java", "-jar", "/home/spring/springboot-task-tracker-mysql-k8s.jar" ]
+
+
+FROM eclipse-temurin:17-jre-alpine as preproduction
+RUN addgroup -S spring && adduser -S spring -G spring
+USER spring:spring
+EXPOSE 8080
+COPY target/springboot-task-tracker-mysql-k8s.jar /home/spring/springboot-task-tracker-mysql-k8s.jar
+ENTRYPOINT [ "java", "-jar", "/home/spring/springboot-task-tracker-mysql-k8s.jar" ]
 
 

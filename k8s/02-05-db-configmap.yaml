@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:  
+  name: task-api-db-cm
+  namespace: task-api-ns
+data:
+  MYSQL_DATABASE: tasksdb

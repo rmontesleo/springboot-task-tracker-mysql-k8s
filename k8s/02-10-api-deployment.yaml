@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+  namespace: task-api-ns
+  labels:
+    app: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api
+      tier: backend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: api
+        tier: backend
+    spec:
+      containers:
+      - image: rmontesleo/springboot-task-tracker-mysql-k8s:v1
+        name: api
+        env:
+        - name: TODO_API_VERSION
+          valueFrom:
+            configMapKeyRef:
+              name: task-api-cm
+              key: TODO_API_VERSION
+
+        - name: APPLICATION_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: task-api-cm
+              key: APPLICATION_PORT
+        
+        - name: IS_FORMAT_SQL
+          valueFrom:
+            configMapKeyRef:
+              name: task-api-cm
+              key: IS_SHOW_SQL
+
+        - name: HOW_ANSI_OUTPUT_IS_ENABLED
+          valueFrom:
+            configMapKeyRef:
+              name: task-api-cm
+              key: HOW_ANSI_OUTPUT_IS_ENABLED
+
+        - name: SPRING_DATASOURCE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: task-api-cm
+              key: SPRING_DATASOURCE_URL       
+
+
+        - name: SPRING_DATASOURCE_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: task-api-secrets
+              key: SPRING_DATASOURCE_USERNAME
+
+        - name: SPRING_DATASOURCE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: task-api-secrets
+              key: SPRING_DATASOURCE_PASSWORD        
+
+        ports:
+        - containerPort: 8080
+          name: api
