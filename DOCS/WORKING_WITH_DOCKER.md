@@ -57,6 +57,8 @@ services:
 
 #### build your production image
 ```bash
+docker build --target demo -t springboot-task-tracker-mysql-k8s:v1 .
+
 docker build --target production -t springboot-task-tracker-mysql-k8s:v1 .
 ```
 
@@ -75,10 +77,21 @@ docker push $docker_registry_name/springboot-task-tracker-mysql-k8s:v1
 docker compose up -d
 
 # start the api
-docker compose up --profile backend up -d
+docker compose --profile backend up -d
 
 # start 3 replicas of the api container containers
-docker compose up --profile bakend up -d --scale api=3
+docker compose --profile backend up -d --scale api=3
+
+#
+docker compose --profile repository up -d
+
+#
+docker compose --profile backend down 
+
+#
+docker compose --profile repository down
+
+docker compose down 
 ```
 
 ---

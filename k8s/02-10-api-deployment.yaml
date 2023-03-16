@@ -39,6 +39,12 @@ spec:
           valueFrom:
             configMapKeyRef:
               name: task-api-cm
+              key: IS_FORMAT_SQL
+
+        - name: IS_SHOW_SQL
+          valueFrom:
+            configMapKeyRef:
+              name: task-api-cm
               key: IS_SHOW_SQL
 
         - name: HOW_ANSI_OUTPUT_IS_ENABLED

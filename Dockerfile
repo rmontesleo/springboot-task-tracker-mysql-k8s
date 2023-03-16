@@ -24,7 +24,7 @@ COPY --from=build /app/target/springboot-task-tracker-mysql-k8s.jar /home/spring
 ENTRYPOINT [ "java", "-jar", "/home/spring/springboot-task-tracker-mysql-k8s.jar" ]
 
 
-FROM eclipse-temurin:17-jre-alpine as preproduction
+FROM eclipse-temurin:17-jre-alpine as demo
 RUN addgroup -S spring && adduser -S spring -G spring
 USER spring:spring
 EXPOSE 8080

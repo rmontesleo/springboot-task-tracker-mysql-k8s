@@ -11,4 +11,4 @@ data:
   IS_FORMAT_SQL: "true"
   IS_SHOW_SQL: "true"
   HOW_ANSI_OUTPUT_IS_ENABLED: "ALWAYS"
-  SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/tasksdb
+  SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/tasksdb"
