@@ -6,9 +6,7 @@
 
 
 - [](https://spring.io/guides/gs/rest-service-cors/)
-
 - [](https://www.baeldung.com/spring-cors)
-
 - [](https://www.demo2s.com/java/spring-corsregistry-addmapping-string-pathpattern.html)
 
 - [](https://codingnconcepts.com/spring-boot/spring-value-annotation/)
@@ -46,3 +44,25 @@ The following guides illustrate how to use some features concretely:
 * [Validation](https://spring.io/guides/gs/validating-form-input/)
 * [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
 
+### K8s
+
+- [How to Deploy PostgreSQL Instance to Kubernetes](https://sweetcode.io/how-to-deploy-postgresql-instance-to-kubernetes/)
+
+- [](https://www.serverlab.ca/tutorials/linux/administration-linux/how-to-base64-encode-and-decode-from-command-line)
+
+
+### Solving Problems
+
+- [](https://stackoverflow.com/questions/4102449/how-to-annotate-mysql-autoincrement-field-with-jpa-annotations)
+
+- [](https://stackoverflow.com/questions/50322550/hibernate-dialect-for-mysql-8)
+
+- [](https://stackoverflow.com/questions/1334529/what-could-cause-procedure-schema-identity-does-not-exist-using-mysql-and-hibe)
+
+- [Hibernate dialect for MySQL 8?](https://stackoverflow.com/questions/50322550/hibernate-dialect-for-mysql-8)
+
+- [What could cause "PROCEDURE schema.identity does not exist" using MySQL and Hibernate?](https://stackoverflow.com/questions/1334529/what-could-cause-procedure-schema-identity-does-not-exist-using-mysql-and-hibe)
+
+- [Exception: "Procedure x does not exist" when calling stored function](https://forums.mysql.com/read.php?39,96721,96721#msg-96721)
+
+ -[](https://stackoverflow.com/questions/49559185/spring-boot-datasource-in-unit-tests)

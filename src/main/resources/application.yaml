@@ -15,7 +15,7 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.H2Dialect
+        dialect: org.hibernate.dialect.MySQL8Dialect
         '[format_sql]': ${IS_FORMAT_SQL}
     show-sql: ${IS_SHOW_SQL}
   output:

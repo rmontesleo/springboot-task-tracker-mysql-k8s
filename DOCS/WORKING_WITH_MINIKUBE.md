@@ -21,3 +21,8 @@ kubectl apply -f k8s/02-05-db-secrets.yaml
 
 
 ```
+
+### settings for ubuntu pod
+```bash
+apt-get -y update && apt-get -y install curl iputils-ping jq
+```

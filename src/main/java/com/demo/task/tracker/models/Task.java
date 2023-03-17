@@ -27,7 +27,7 @@ import lombok.ToString;
 public class Task {
     
     @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY )
+    @GeneratedValue( strategy = GenerationType.AUTO )
     private Long id;
 
     @Column(name = "task_text")
